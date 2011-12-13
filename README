@@ -1,1 +1,9 @@
-Hello World!
+Schudi Vertriebsprogramm
+
+Tutorial git:
+
+git pull --> Dateien vom Server holen
+git status --> Status der Dateien anzeigen
+git push --> auf Server hochladen
+git add --> neue Datein hinzufügen
+git commit -m "Kommentar" --> Savepoint erstellen und Kommentar über Änderung
