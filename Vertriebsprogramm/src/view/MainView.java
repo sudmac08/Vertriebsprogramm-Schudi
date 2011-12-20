@@ -33,21 +33,18 @@ public class MainView extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         paCustomer = new javax.swing.JPanel();
-        paFunctions = new javax.swing.JPanel();
+        paFunctionsCustomer = new javax.swing.JPanel();
         btAddCustomer = new javax.swing.JButton();
         btEditCustomer = new javax.swing.JButton();
         btRemoveCustomer = new javax.swing.JButton();
-        paSearch = new javax.swing.JPanel();
+        paSearchCustomer = new javax.swing.JPanel();
         tfSearch = new javax.swing.JTextField();
         cbSearchCustomers = new javax.swing.JComboBox();
         btSearchCustomer = new javax.swing.JButton();
-        paTable = new javax.swing.JPanel();
+        paTableCustomer = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         taCustomers = new javax.swing.JTable();
-        jPanel2 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        paOrder = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -58,34 +55,34 @@ public class MainView extends javax.swing.JFrame {
 
         paCustomer.setLayout(new java.awt.BorderLayout());
 
-        paFunctions.setBorder(javax.swing.BorderFactory.createTitledBorder("Funktionen"));
-        paFunctions.setLayout(new java.awt.GridLayout());
+        paFunctionsCustomer.setBorder(javax.swing.BorderFactory.createTitledBorder("Funktionen"));
+        paFunctionsCustomer.setLayout(new java.awt.GridLayout(1, 0));
 
         btAddCustomer.setText("Hinzufügen");
-        paFunctions.add(btAddCustomer);
+        paFunctionsCustomer.add(btAddCustomer);
 
         btEditCustomer.setText("Bearbeiten");
         btEditCustomer.setEnabled(false);
-        paFunctions.add(btEditCustomer);
+        paFunctionsCustomer.add(btEditCustomer);
 
         btRemoveCustomer.setText("Entfernen");
-        paFunctions.add(btRemoveCustomer);
+        paFunctionsCustomer.add(btRemoveCustomer);
 
-        paCustomer.add(paFunctions, java.awt.BorderLayout.PAGE_END);
+        paCustomer.add(paFunctionsCustomer, java.awt.BorderLayout.PAGE_END);
 
-        paSearch.setLayout(new java.awt.GridLayout(1, 3));
-        paSearch.add(tfSearch);
+        paSearchCustomer.setLayout(new java.awt.GridLayout(1, 3));
+        paSearchCustomer.add(tfSearch);
 
         cbSearchCustomers.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        paSearch.add(cbSearchCustomers);
+        paSearchCustomer.add(cbSearchCustomers);
 
         btSearchCustomer.setText("Suchen");
-        paSearch.add(btSearchCustomer);
+        paSearchCustomer.add(btSearchCustomer);
 
-        paCustomer.add(paSearch, java.awt.BorderLayout.PAGE_START);
+        paCustomer.add(paSearchCustomer, java.awt.BorderLayout.PAGE_START);
 
-        paTable.setBorder(javax.swing.BorderFactory.createTitledBorder("Kundentabelle"));
-        paTable.setLayout(new java.awt.BorderLayout());
+        paTableCustomer.setBorder(javax.swing.BorderFactory.createTitledBorder("Kundentabelle"));
+        paTableCustomer.setLayout(new java.awt.BorderLayout());
 
         taCustomers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -100,59 +97,34 @@ public class MainView extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(taCustomers);
 
-        paTable.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+        paTableCustomer.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
-        paCustomer.add(paTable, java.awt.BorderLayout.CENTER);
+        paCustomer.add(paTableCustomer, java.awt.BorderLayout.CENTER);
 
         jTabbedPane1.addTab("Kunde", paCustomer);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable1);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout paOrderLayout = new javax.swing.GroupLayout(paOrder);
+        paOrder.setLayout(paOrderLayout);
+        paOrderLayout.setHorizontalGroup(
+            paOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 481, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+        paOrderLayout.setVerticalGroup(
+            paOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 349, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab2", jPanel2);
+        jTabbedPane1.addTab("Bestellung", paOrder);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 395, Short.MAX_VALUE)
+            .addGap(0, 481, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 323, Short.MAX_VALUE)
+            .addGap(0, 349, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("tab3", jPanel3);
@@ -161,11 +133,11 @@ public class MainView extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 395, Short.MAX_VALUE)
+            .addGap(0, 481, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 323, Short.MAX_VALUE)
+            .addGap(0, 349, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("tab4", jPanel4);
@@ -224,21 +196,18 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton btRemoveCustomer;
     private javax.swing.JButton btSearchCustomer;
     private javax.swing.JComboBox cbSearchCustomers;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JPanel paCustomer;
-    private javax.swing.JPanel paFunctions;
-    private javax.swing.JPanel paSearch;
-    private javax.swing.JPanel paTable;
+    private javax.swing.JPanel paFunctionsCustomer;
+    private javax.swing.JPanel paOrder;
+    private javax.swing.JPanel paSearchCustomer;
+    private javax.swing.JPanel paTableCustomer;
     private javax.swing.JTable taCustomers;
     private javax.swing.JTextField tfSearch;
     // End of variables declaration//GEN-END:variables
