@@ -56,9 +56,8 @@ public class MainView extends javax.swing.JFrame {
         paTableOrder = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jPanel3 = new javax.swing.JPanel();
+        paRoute = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         paProduct = new javax.swing.JPanel();
         paSearchProduct = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -189,30 +188,22 @@ public class MainView extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Bestellung", paOrder);
 
-        jPanel3.setLayout(new java.awt.GridLayout(1, 3));
-
-        jButton1.setText("jButton1");
+        paRoute.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addContainerGap(416, Short.MAX_VALUE))
+            .addGap(0, 499, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addContainerGap(332, Short.MAX_VALUE))
+            .addGap(0, 366, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jPanel2);
+        paRoute.add(jPanel2, java.awt.BorderLayout.CENTER);
 
-        jTabbedPane1.addTab("Route", jPanel3);
+        jTabbedPane1.addTab("Route", paRoute);
 
         paProduct.setLayout(new java.awt.BorderLayout());
 
@@ -336,13 +327,11 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton btSearchProduct;
     private javax.swing.JComboBox cbCustomerOrder;
     private javax.swing.JComboBox cbSearchCustomers;
-    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -355,6 +344,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JPanel paFunctionsProduct;
     private javax.swing.JPanel paOrder;
     private javax.swing.JPanel paProduct;
+    private javax.swing.JPanel paRoute;
     private javax.swing.JPanel paSearchCustomer;
     private javax.swing.JPanel paSearchOrder;
     private javax.swing.JPanel paSearchProduct;
