@@ -58,6 +58,7 @@ public class MainView extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         paProduct = new javax.swing.JPanel();
         paSearchProduct = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -129,7 +130,7 @@ public class MainView extends javax.swing.JFrame {
         paOrder.setLayout(new java.awt.BorderLayout());
 
         paFunctionsOrder.setBorder(javax.swing.BorderFactory.createTitledBorder("Funktionen"));
-        paFunctionsOrder.setLayout(new java.awt.GridLayout());
+        paFunctionsOrder.setLayout(new java.awt.GridLayout(1, 0));
 
         btAddOrder.setText("Hinzufügen");
         paFunctionsOrder.add(btAddOrder);
@@ -190,15 +191,23 @@ public class MainView extends javax.swing.JFrame {
 
         jPanel3.setLayout(new java.awt.GridLayout(1, 3));
 
+        jButton1.setText("jButton1");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 499, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(251, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(175, 175, 175))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 366, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(115, 115, 115)
+                .addComponent(jButton1)
+                .addContainerGap(228, Short.MAX_VALUE))
         );
 
         jPanel3.add(jPanel2);
@@ -327,6 +336,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton btSearchProduct;
     private javax.swing.JComboBox cbCustomerOrder;
     private javax.swing.JComboBox cbSearchCustomers;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
