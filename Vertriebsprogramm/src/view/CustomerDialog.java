@@ -6,7 +6,7 @@
 /*
  * CustomerDialog.java
  *
- * Created on Jan 31, 2012, 2:46:57 PM
+ * Created on Feb 28, 2012, 8:19:13 AM
  */
 package view;
 
@@ -14,12 +14,13 @@ package view;
  *
  * @author Mike
  */
-public class ProductDialog extends javax.swing.JFrame {
+public class CustomerDialog extends javax.swing.JDialog {
 
     /** Creates new form CustomerDialog */
-    public ProductDialog() {
-        initComponents();
+    public CustomerDialog(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         this.setLocationRelativeTo(this);
+        initComponents();
     }
 
     /** This method is called from within the constructor to
@@ -36,21 +37,21 @@ public class ProductDialog extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tfCustomerDialogFirstName = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        tfCustomerDialogLastName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        tfCustomerDialogStreet = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        tfCustomerDialogZipCode = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        tfCustomerDialogCity = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        cbCustomerDialogRoute = new javax.swing.JComboBox();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
+        jPanel1.setLayout(new java.awt.GridLayout());
 
         jButton2.setText("OK");
         jPanel1.add(jButton2);
@@ -60,46 +61,45 @@ public class ProductDialog extends javax.swing.JFrame {
 
         jPanel2.setLayout(new java.awt.GridLayout(6, 2));
 
-        jLabel1.setText("Name");
+        jLabel1.setText("Vorname");
         jPanel2.add(jLabel1);
-        jPanel2.add(jTextField1);
-        jTextField1.getAccessibleContext().setAccessibleDescription("Name");
+        jPanel2.add(tfCustomerDialogFirstName);
 
         jLabel2.setText("Nachname");
         jPanel2.add(jLabel2);
-        jPanel2.add(jTextField2);
+        jPanel2.add(tfCustomerDialogLastName);
 
         jLabel3.setText("Strasse");
         jPanel2.add(jLabel3);
-        jPanel2.add(jTextField3);
+        jPanel2.add(tfCustomerDialogStreet);
 
         jLabel4.setText("Postleitzahl");
         jPanel2.add(jLabel4);
-        jPanel2.add(jTextField4);
+        jPanel2.add(tfCustomerDialogZipCode);
 
         jLabel5.setText("Ort");
         jPanel2.add(jLabel5);
-        jPanel2.add(jTextField5);
+        jPanel2.add(tfCustomerDialogCity);
 
         jLabel6.setText("Route");
         jPanel2.add(jLabel6);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox1);
+        cbCustomerDialogRoute.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(cbCustomerDialogRoute);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -122,28 +122,36 @@ public class ProductDialog extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProductDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProductDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProductDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProductDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new ProductDialog().setVisible(true);
+                CustomerDialog dialog = new CustomerDialog(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox cbCustomerDialogRoute;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -152,10 +160,10 @@ public class ProductDialog extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField tfCustomerDialogCity;
+    private javax.swing.JTextField tfCustomerDialogFirstName;
+    private javax.swing.JTextField tfCustomerDialogLastName;
+    private javax.swing.JTextField tfCustomerDialogStreet;
+    private javax.swing.JTextField tfCustomerDialogZipCode;
     // End of variables declaration//GEN-END:variables
 }
