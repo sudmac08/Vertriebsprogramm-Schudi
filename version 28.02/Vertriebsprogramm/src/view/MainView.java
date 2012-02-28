@@ -10,16 +10,34 @@
  */
 package view;
 
+import admin.Artikel;
+import admin.Bestellung;
+import admin.Kunde;
+import java.util.Vector;
+import model.CustomerTableModel;
+import model.OrderTableModel;
+import model.ProductTableModel;
+
 /**
  *
  * @author Marco
  */
 public class MainView extends javax.swing.JFrame {
 
+    CustomerTableModel customerTM;
+    OrderTableModel orderTM;
+    ProductTableModel productTM;    
+    
+    Vector <Kunde> customerList;
+    Vector <Bestellung> orderList;
+    Vector <Artikel> productList;
+    
     /** Creates new form MainView */
     public MainView() {
         initComponents();
         this.setLocationRelativeTo(this);
+        setTitle("Vertriebsprogramm");
+        setLists();          
     }
 
     /** This method is called from within the constructor to
@@ -30,7 +48,6 @@ public class MainView extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         paCustomer = new javax.swing.JPanel();
@@ -44,7 +61,7 @@ public class MainView extends javax.swing.JFrame {
         btSearchCustomer = new javax.swing.JButton();
         paTableCustomer = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        taCustomers = new javax.swing.JTable();
+        tbCustomers = new javax.swing.JTable();
         paOrder = new javax.swing.JPanel();
         paFunctionsOrder = new javax.swing.JPanel();
         btAddOrder = new javax.swing.JButton();
@@ -56,7 +73,7 @@ public class MainView extends javax.swing.JFrame {
         cbCustomerOrder = new javax.swing.JComboBox();
         paTableOrder = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbOrder = new javax.swing.JTable();
         paRoute = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -120,7 +137,7 @@ public class MainView extends javax.swing.JFrame {
         paTableCustomer.setBorder(javax.swing.BorderFactory.createTitledBorder("Kundentabelle"));
         paTableCustomer.setLayout(new java.awt.BorderLayout());
 
-        taCustomers.setModel(new javax.swing.table.DefaultTableModel(
+        tbCustomers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -131,7 +148,7 @@ public class MainView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(taCustomers);
+        jScrollPane1.setViewportView(tbCustomers);
 
         paTableCustomer.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
@@ -182,7 +199,7 @@ public class MainView extends javax.swing.JFrame {
         paTableOrder.setBorder(javax.swing.BorderFactory.createTitledBorder("Bestellungstablelle"));
         paTableOrder.setLayout(new java.awt.BorderLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -193,7 +210,7 @@ public class MainView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(tbOrder);
 
         paTableOrder.add(jScrollPane3, java.awt.BorderLayout.CENTER);
 
@@ -371,6 +388,35 @@ public class MainView extends javax.swing.JFrame {
             }
         });
     }
+    
+    
+    
+    public void getActualLists(){
+//        customerList = controller.getStudentlist();
+//        orderList = controller.getGradelist();
+//        productList = controller.getClasslist();
+    }
+    
+    public void setLists(){
+        
+        this.getActualLists();
+        
+        orderTM = new OrderTableModel(orderList);
+        productTM  = new ProductTableModel(productList);
+        customerTM = new CustomerTableModel(customerList);
+        
+        tbOrder.setModel(orderTM);
+        tbProduct.setModel(productTM);        
+        tbCustomers.setModel(customerTM);    
+        
+        tbOrder.updateUI();
+        tbProduct.updateUI();
+        tbCustomers.updateUI();        
+    }
+    
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAddCustomer;
     private javax.swing.JButton btAddOrder;
@@ -406,7 +452,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lbCustomerOrder;
     private javax.swing.JPanel paCustomer;
     private javax.swing.JPanel paFunctionsCustomer;
@@ -422,7 +467,8 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JPanel paTableCustomer;
     private javax.swing.JPanel paTableOrder;
     private javax.swing.JPanel paTableProduct;
-    private javax.swing.JTable taCustomers;
+    private javax.swing.JTable tbCustomers;
+    private javax.swing.JTable tbOrder;
     private javax.swing.JTable tbProduct;
     private javax.swing.JTextField tfSearch;
     private javax.swing.JTextField tfSearchProduct;

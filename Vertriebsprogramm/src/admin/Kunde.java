@@ -10,8 +10,6 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -24,23 +22,25 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author Mike
+ * @author Marco
  */
 @Entity
 @Table(name = "kunde")
 @XmlRootElement
-@NamedQueries({
+@NamedQueries(
+{
     @NamedQuery(name = "Kunde.findAll", query = "SELECT k FROM Kunde k"),
     @NamedQuery(name = "Kunde.findByKundeid", query = "SELECT k FROM Kunde k WHERE k.kundeid = :kundeid"),
     @NamedQuery(name = "Kunde.findByVorname", query = "SELECT k FROM Kunde k WHERE k.vorname = :vorname"),
     @NamedQuery(name = "Kunde.findByZuname", query = "SELECT k FROM Kunde k WHERE k.zuname = :zuname"),
     @NamedQuery(name = "Kunde.findByStrasse", query = "SELECT k FROM Kunde k WHERE k.strasse = :strasse"),
     @NamedQuery(name = "Kunde.findByPostleitzahl", query = "SELECT k FROM Kunde k WHERE k.postleitzahl = :postleitzahl"),
-    @NamedQuery(name = "Kunde.findByOrt", query = "SELECT k FROM Kunde k WHERE k.ort = :ort")})
-public class Kunde implements Serializable {
+    @NamedQuery(name = "Kunde.findByOrt", query = "SELECT k FROM Kunde k WHERE k.ort = :ort")
+})
+public class Kunde implements Serializable
+{
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "kundeid")
     private Integer kundeid;
@@ -65,14 +65,17 @@ public class Kunde implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "kunde")
     private Collection<Bestellung> bestellungCollection;
 
-    public Kunde() {
+    public Kunde()
+    {
     }
 
-    public Kunde(Integer kundeid) {
+    public Kunde(Integer kundeid)
+    {
         this.kundeid = kundeid;
     }
 
-    public Kunde(Integer kundeid, String vorname, String zuname, String strasse, int postleitzahl, String ort) {
+    public Kunde(Integer kundeid, String vorname, String zuname, String strasse, int postleitzahl, String ort)
+    {
         this.kundeid = kundeid;
         this.vorname = vorname;
         this.zuname = zuname;
@@ -81,93 +84,114 @@ public class Kunde implements Serializable {
         this.ort = ort;
     }
 
-    public Integer getKundeid() {
+    public Integer getKundeid()
+    {
         return kundeid;
     }
 
-    public void setKundeid(Integer kundeid) {
+    public void setKundeid(Integer kundeid)
+    {
         this.kundeid = kundeid;
     }
 
-    public String getVorname() {
+    public String getVorname()
+    {
         return vorname;
     }
 
-    public void setVorname(String vorname) {
+    public void setVorname(String vorname)
+    {
         this.vorname = vorname;
     }
 
-    public String getZuname() {
+    public String getZuname()
+    {
         return zuname;
     }
 
-    public void setZuname(String zuname) {
+    public void setZuname(String zuname)
+    {
         this.zuname = zuname;
     }
 
-    public String getStrasse() {
+    public String getStrasse()
+    {
         return strasse;
     }
 
-    public void setStrasse(String strasse) {
+    public void setStrasse(String strasse)
+    {
         this.strasse = strasse;
     }
 
-    public int getPostleitzahl() {
+    public int getPostleitzahl()
+    {
         return postleitzahl;
     }
 
-    public void setPostleitzahl(int postleitzahl) {
+    public void setPostleitzahl(int postleitzahl)
+    {
         this.postleitzahl = postleitzahl;
     }
 
-    public String getOrt() {
+    public String getOrt()
+    {
         return ort;
     }
 
-    public void setOrt(String ort) {
+    public void setOrt(String ort)
+    {
         this.ort = ort;
     }
 
-    public Route getRouteid() {
+    public Route getRouteid()
+    {
         return routeid;
     }
 
-    public void setRouteid(Route routeid) {
+    public void setRouteid(Route routeid)
+    {
         this.routeid = routeid;
     }
 
     @XmlTransient
-    public Collection<Bestellung> getBestellungCollection() {
+    public Collection<Bestellung> getBestellungCollection()
+    {
         return bestellungCollection;
     }
 
-    public void setBestellungCollection(Collection<Bestellung> bestellungCollection) {
+    public void setBestellungCollection(Collection<Bestellung> bestellungCollection)
+    {
         this.bestellungCollection = bestellungCollection;
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         int hash = 0;
         hash += (kundeid != null ? kundeid.hashCode() : 0);
         return hash;
     }
 
     @Override
-    public boolean equals(Object object) {
+    public boolean equals(Object object)
+    {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Kunde)) {
+        if (!(object instanceof Kunde))
+        {
             return false;
         }
         Kunde other = (Kunde) object;
-        if ((this.kundeid == null && other.kundeid != null) || (this.kundeid != null && !this.kundeid.equals(other.kundeid))) {
+        if ((this.kundeid == null && other.kundeid != null) || (this.kundeid != null && !this.kundeid.equals(other.kundeid)))
+        {
             return false;
         }
         return true;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "admin.Kunde[ kundeid=" + kundeid + " ]";
     }
     

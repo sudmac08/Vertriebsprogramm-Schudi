@@ -37,8 +37,8 @@ public class ProductDialog extends javax.swing.JDialog {
         tfProductDialogName = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         tfProductDialogPrice = new javax.swing.JTextField();
-        btProductDialogOk = new javax.swing.JButton();
         btProductDialogCancel = new javax.swing.JButton();
+        btProductDialogOk = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -52,27 +52,17 @@ public class ProductDialog extends javax.swing.JDialog {
         jPanel1.add(jLabel2);
         jPanel1.add(tfProductDialogPrice);
 
-        btProductDialogOk.setText("Ok");
-        btProductDialogOk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                onOrderDialogOk(evt);
-            }
-        });
-        jPanel1.add(btProductDialogOk);
-
-        btProductDialogCancel.setText("Abbrechen");
-        btProductDialogCancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                onOrderDialogCancel(evt);
-            }
-        });
+        btProductDialogCancel.setText("Cancel");
         jPanel1.add(btProductDialogCancel);
+
+        btProductDialogOk.setText("Ok");
+        jPanel1.add(btProductDialogOk);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,14 +71,6 @@ public class ProductDialog extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void onOrderDialogOk(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onOrderDialogOk
-        // TODO add your handling code here:
-    }//GEN-LAST:event_onOrderDialogOk
-
-    private void onOrderDialogCancel(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onOrderDialogCancel
-        // TODO add your handling code here:
-    }//GEN-LAST:event_onOrderDialogCancel
 
     /**
      * @param args the command line arguments

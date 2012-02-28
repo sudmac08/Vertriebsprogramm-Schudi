@@ -14,10 +14,11 @@ import javax.persistence.TemporalType;
 
 /**
  *
- * @author Mike
+ * @author Marco
  */
 @Embeddable
-public class BestellungPK implements Serializable {
+public class BestellungPK implements Serializable
+{
     @Basic(optional = false)
     @Column(name = "kundeid")
     private int kundeid;
@@ -29,41 +30,50 @@ public class BestellungPK implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date datum;
 
-    public BestellungPK() {
+    public BestellungPK()
+    {
     }
 
-    public BestellungPK(int kundeid, int artikelid, Date datum) {
+    public BestellungPK(int kundeid, int artikelid, Date datum)
+    {
         this.kundeid = kundeid;
         this.artikelid = artikelid;
         this.datum = datum;
     }
 
-    public int getKundeid() {
+    public int getKundeid()
+    {
         return kundeid;
     }
 
-    public void setKundeid(int kundeid) {
+    public void setKundeid(int kundeid)
+    {
         this.kundeid = kundeid;
     }
 
-    public int getArtikelid() {
+    public int getArtikelid()
+    {
         return artikelid;
     }
 
-    public void setArtikelid(int artikelid) {
+    public void setArtikelid(int artikelid)
+    {
         this.artikelid = artikelid;
     }
 
-    public Date getDatum() {
+    public Date getDatum()
+    {
         return datum;
     }
 
-    public void setDatum(Date datum) {
+    public void setDatum(Date datum)
+    {
         this.datum = datum;
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         int hash = 0;
         hash += (int) kundeid;
         hash += (int) artikelid;
@@ -72,26 +82,32 @@ public class BestellungPK implements Serializable {
     }
 
     @Override
-    public boolean equals(Object object) {
+    public boolean equals(Object object)
+    {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof BestellungPK)) {
+        if (!(object instanceof BestellungPK))
+        {
             return false;
         }
         BestellungPK other = (BestellungPK) object;
-        if (this.kundeid != other.kundeid) {
+        if (this.kundeid != other.kundeid)
+        {
             return false;
         }
-        if (this.artikelid != other.artikelid) {
+        if (this.artikelid != other.artikelid)
+        {
             return false;
         }
-        if ((this.datum == null && other.datum != null) || (this.datum != null && !this.datum.equals(other.datum))) {
+        if ((this.datum == null && other.datum != null) || (this.datum != null && !this.datum.equals(other.datum)))
+        {
             return false;
         }
         return true;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "admin.BestellungPK[ kundeid=" + kundeid + ", artikelid=" + artikelid + ", datum=" + datum + " ]";
     }
     
