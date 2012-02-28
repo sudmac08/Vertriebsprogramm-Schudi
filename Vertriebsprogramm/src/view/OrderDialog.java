@@ -19,6 +19,7 @@ public class OrderDialog extends javax.swing.JDialog {
     /** Creates new form OrderDialog */
     public OrderDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        this.setLocationRelativeTo(null);
         initComponents();
     }
 
@@ -38,8 +39,8 @@ public class OrderDialog extends javax.swing.JDialog {
         cbOrderDialogProduct = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         tfOrderDialogQuantity = new javax.swing.JTextField();
-        btOrderProductCancel = new javax.swing.JButton();
         btOrderDialogOk = new javax.swing.JButton();
+        btOrderProductCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -61,11 +62,21 @@ public class OrderDialog extends javax.swing.JDialog {
         jPanel1.add(jLabel3);
         jPanel1.add(tfOrderDialogQuantity);
 
-        btOrderProductCancel.setText("Cancel");
-        jPanel1.add(btOrderProductCancel);
-
         btOrderDialogOk.setText("Ok");
+        btOrderDialogOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onOrderDialogOk(evt);
+            }
+        });
         jPanel1.add(btOrderDialogOk);
+
+        btOrderProductCancel.setText("Cancel");
+        btOrderProductCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onOrderDialogCancel(evt);
+            }
+        });
+        jPanel1.add(btOrderProductCancel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,6 +91,14 @@ public class OrderDialog extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void onOrderDialogOk(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onOrderDialogOk
+        
+    }//GEN-LAST:event_onOrderDialogOk
+
+    private void onOrderDialogCancel(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onOrderDialogCancel
+        
+    }//GEN-LAST:event_onOrderDialogCancel
 
     /**
      * @param args the command line arguments
