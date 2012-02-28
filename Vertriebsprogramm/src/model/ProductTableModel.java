@@ -4,6 +4,7 @@
  */
 package model;
 
+import admin.Artikel;
 import java.util.Vector;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
@@ -17,9 +18,9 @@ public class ProductTableModel implements TableModel{
     
     
     String[] columnNames = {"Artikelbezeichnung"};
-    Vector modelproducts;//Kunden
+    Vector<Artikel> modelproducts;//Kunden
 
-    public ProductTableModel(Vector modelproducts) {
+    public ProductTableModel(Vector<Artikel> modelproducts) {
         this.modelproducts = modelproducts;
     }
 
@@ -52,7 +53,7 @@ public class ProductTableModel implements TableModel{
     public Object getValueAt(int rowIndex, int columnIndex) {
         switch (columnIndex)
         {
-//            case 0: return modelproducts.get(rowIndex).getArtikel().getArtikelBezeichnung();          
+            case 0: return modelproducts.get(rowIndex).getBezeichnung().toString();          
         }
         return false;
     }
